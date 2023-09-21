@@ -7,6 +7,7 @@ const FavoritesPage = ({offers}) => {
   const favoriteOffers = offers.filter((offer) => offer.isFavorite);
   const cities = [...new Set(offers.map((offer) => offer.city))];
 
+
   return (
     <div className="page">
       <header className="header">
@@ -37,7 +38,7 @@ const FavoritesPage = ({offers}) => {
             <h1 className="favorites__title">Saved listing</h1>
             <ul className="favorites__list">
               {cities.map((city) => {
-                
+
               })}
               <li className="favorites__locations-items">
                 <div className="favorites__locations locations locations--current">
