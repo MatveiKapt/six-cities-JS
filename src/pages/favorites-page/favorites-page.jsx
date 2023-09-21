@@ -1,6 +1,7 @@
 import React from "react";
-import Logo from "../../components/logo/logo";
 import PropTypes from "prop-types";
+import Logo from "../../components/logo/logo";
+import FavoritesCard from "../../components/favorites-card/favorites-card";
 
 const FavoritesPage = ({offers}) => {
   const favoriteOffers = offers.filter((offer) => offer.isFavorite);
@@ -35,7 +36,9 @@ const FavoritesPage = ({offers}) => {
           <section className="favorites">
             <h1 className="favorites__title">Saved listing</h1>
             <ul className="favorites__list">
-              {offers.map}
+              {cities.map((city) => {
+                
+              })}
               <li className="favorites__locations-items">
                 <div className="favorites__locations locations locations--current">
                   <div className="locations__item">
