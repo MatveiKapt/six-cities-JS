@@ -40,6 +40,7 @@ export const offers = [
         text: `Lorem asdsdfsdfa`,
       },
     ],
+    coordinates: [52.3909553943508, 4.85309666406198],
   },
   {
     id: 2,
@@ -56,7 +57,7 @@ export const offers = [
     price: 500,
     title: `Lorem nice flat bad flat`,
     type: `House`,
-    city: `Paris`,
+    city: `Amsterdam`,
     isFavorite: true,
     rating: 2,
     masterInfo: {
@@ -90,6 +91,7 @@ export const offers = [
         text: `ASD lflgl rlglrtghpwletgfvsd`,
       },
     ],
+    coordinates: [52.369553943508, 4.85309666406198],
   },
   {
     id: 3,
@@ -106,7 +108,7 @@ export const offers = [
     price: 1000,
     title: `Big hata - nice hata`,
     type: `Apartament`,
-    city: `Cologne`,
+    city: `Amsterdam`,
     isFavorite: false,
     rating: 4,
     masterInfo: {
@@ -148,6 +150,7 @@ export const offers = [
         text: `Miswdefkdasfp s pdpp spd qpwdpskad w`,
       },
     ],
+    coordinates: [52.3909553943508, 4.929309666406198],
   },
   {
     id: 4,
@@ -213,5 +216,34 @@ export const offers = [
         text: `adfojwefoj ofjqowefjoqejf `,
       },
     ],
+    coordinates: [52.3809553943508, 4.939309666406198],
   }
+];
+
+
+export const cities = [
+  {
+    id: 1,
+    name: `Paris`,
+  },
+  {
+    id: 2,
+    name: `Cologne`,
+  },
+  {
+    id: 3,
+    name: `Brussels`,
+  },
+  {
+    id: 4,
+    name: `Amsterdam`,
+  },
+  {
+    id: 5,
+    name: `Hamburg`,
+  },
+  {
+    id: 6,
+    name: `Dusseldorf`,
+  },
 ];

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
+import {Pages} from '../../const/const';
 
 const Card = (props) => {
   const {offer, onMouseEnter, onMouseLeave} = props;
@@ -10,14 +11,16 @@ const Card = (props) => {
   const handlerMouseLeave = () => onMouseLeave();
 
   const STARS_WIDTH = 20;
+  const {pathname} = useLocation();
+  const isMainPage = () => pathname === (Pages.MAIN);
 
   return (
-    <article className="cities__place-card place-card" onMouseOver={handlerMouseEnter} onMouseOut={handlerMouseLeave}>
+    <article className={`${isMainPage ? `cities__place-card` : `near-places__card`} place-card`} onMouseOver={handlerMouseEnter} onMouseOut={handlerMouseLeave}>
       {isPremium && <div className="place-card__mark">
         <span>Premium</span>
       </div>
       }
-      <div className="cities__image-wrapper place-card__image-wrapper">
+      <div className={`${isMainPage ? `cities` : `near-places`}__image-wrapper place-card__image-wrapper`}>
         <a href="#">
           <img className="place-card__image" src={previewImage} width={260} height={200} alt="Place image" />
         </a>
@@ -51,17 +54,17 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  offer: PropTypes.object.isRequired,
-  isPremium: PropTypes.bool.isRequired,
-  previewImage: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  isFavorite: PropTypes.bool.isRequired,
-  title: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  props: PropTypes.object.isRequired,
-  id: PropTypes.number.isRequired,
-  onMouseEnter: PropTypes.fn,
-  onMouseLeave: PropTypes.fn,
+  offer: PropTypes.object,
+  isPremium: PropTypes.bool,
+  previewImage: PropTypes.string,
+  price: PropTypes.number,
+  isFavorite: PropTypes.bool,
+  title: PropTypes.string,
+  type: PropTypes.string,
+  props: PropTypes.object,
+  id: PropTypes.number,
+  onMouseEnter: PropTypes.func,
+  onMouseLeave: PropTypes.func,
 };
 
 

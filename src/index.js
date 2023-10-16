@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
-import {offers} from './mock/mock';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import {composeWithDevTools} from 'redux-devtools-extension';
+import {reducer} from './store/reducer';
+import {offers, cities} from './mock/mock';
 
-/* const Setting = {
-  OFFER_COUNT: 6,
-}; */
+const store = createStore(reducer, composeWithDevTools());
 
 ReactDOM.render(
-    <App offers={offers} />,
+    <Provider store={store}>
+      <App offers={offers} cities={cities}/>
+    </Provider>,
     document.querySelector(`#root`)
 );

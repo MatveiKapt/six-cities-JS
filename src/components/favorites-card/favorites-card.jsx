@@ -59,3 +59,5 @@ const FavoritesCard = ({offer}) => {
 FavoritesCard.propTypes = {
   offer: PropTypes.object.isRequired,
 };
+
+export default FavoritesCard;
